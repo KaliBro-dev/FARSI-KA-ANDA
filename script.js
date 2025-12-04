@@ -152,7 +152,7 @@ function resetGame() {
     scoreDisplay.textContent = `0`;
     updateMissedDisplay();
     
-    // Reset slider and player position to center (230 for new size)
+    // Reset slider and player position to center (230)
     playerSlider.value = 230;
     playerBox.style.left = '230px';
 
