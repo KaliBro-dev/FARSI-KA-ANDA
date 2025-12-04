@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kka Anda | بازی کاکنده</title>
+    <title>Kka Anda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Kka Anda | کاکنده</h1>
-        <p>Catch the eggs! Press **R** to restart.</p>
-    </header>
-
     <div id="game-container">
         <div id="player-box"></div>
         
-        <div id="score">Score: 0</div>
-        <div id="missed">Missed: 0 / 3</div>
+        <div id="score">0</div>
+        <div id="missed"></div>
+        
+        <div id="info-overlay">
+            <p>Use ← and → to catch eggs.</p>
+            <p>Miss 3 to lose.</p>
+            <p>Press R to restart.</p>
+        </div>
     </div>
     
     <script src="script.js"></script>
