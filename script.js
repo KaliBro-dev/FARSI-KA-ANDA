@@ -42,7 +42,7 @@ function createEgg() {
     const startX = Math.random() * (GAME_WIDTH - 20); 
     egg.style.left = startX + 'px';
     
-    // Give the egg a unique falling speed (between 1 and 3 pixels per frame)
+    // Give the egg a unique falling speed (between 1.5 and 3 pixels per frame)
     egg.fallSpeed = 1.5 + Math.random() * 1.5; 
     
     gameContainer.appendChild(egg);
@@ -54,27 +54,32 @@ function updateGame() {
 
     const eggs = gameContainer.querySelectorAll('.egg');
 
+    // Define the vertical boundaries
+    const catchingZoneTop = gameContainer.offsetHeight - PLAYER_HEIGHT;
+    const missingLine = gameContainer.offsetHeight - EGG_HEIGHT;
+
     eggs.forEach(egg => {
         let currentY = egg.offsetTop;
         const newY = currentY + egg.fallSpeed;
         
+        // Move the egg
         egg.style.top = newY + 'px';
 
-        // Check if the egg has reached the catching/missing zone
-        // This is the vertical position where the egg meets the catcher's top edge
-        const catchingHeight = gameContainer.offsetHeight - PLAYER_HEIGHT;
-
-        if (newY >= catchingHeight) {
+        // Check if the egg is in the catching/missing zone
+        if (newY >= catchingZoneTop) {
             
             // 1. Check for collision/catch (Alignment-based auto-grab)
-            if (isCollision(egg, playerBox)) {
+            if (newY <= catchingZoneTop + PLAYER_HEIGHT && isCollision(egg, playerBox)) {
+                
                 egg.remove();
                 score++;
                 scoreDisplay.textContent = `${score}`;
+                
             } 
             
             // 2. Check if the egg hit the ground (missed)
-            else if (newY >= gameContainer.offsetHeight - EGG_HEIGHT) {
+            else if (newY >= missingLine) {
+                
                 // Remove the egg and increment missed count
                 egg.remove();
                 missedCount++;
@@ -90,17 +95,16 @@ function updateGame() {
 
 // Simplified Alignment-Based Collision Check
 function isCollision(element1, element2) {
-    // Get current horizontal positions
     const eggX = element1.offsetLeft;
     const eggWidth = element1.offsetWidth;
     
     const playerX = element2.offsetLeft;
     const playerWidth = element2.offsetWidth;
     
-    // Check for horizontal overlap: The egg is caught if it's horizontally aligned with the player
+    // Check for horizontal overlap
     const horizontalOverlap = (
-        eggX < playerX + playerWidth && // Egg's left side is left of the player's right side
-        eggX + eggWidth > playerX       // Egg's right side is right of the player's left side
+        eggX < playerX + playerWidth &&
+        eggX + eggWidth > playerX
     );
     
     return horizontalOverlap;
@@ -130,7 +134,7 @@ function endGame() {
     // Display the score on the overlay
     const infoOverlay = document.getElementById('info-overlay');
     infoOverlay.style.opacity = 1;
-    infoOverlay.style.pointerEvents = 'auto'; // Allows user to see and interact with overlay
+    infoOverlay.style.pointerEvents = 'auto';
     
     infoOverlay.querySelector('p:first-child').innerHTML = `GAME OVER! Final Score: ${score}`;
     infoOverlay.querySelector('p:last-child').textContent = `Press R to restart.`;
@@ -178,7 +182,7 @@ function startGame() {
         if (!isGameOver) {
             createEgg();
         }
-    }, 1200); // Spawning eggs a bit faster
+    }, 1200); 
 
     updateMissedDisplay();
 }
