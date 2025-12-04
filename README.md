@@ -1,8 +1,8 @@
-# 🥚 Kka Anda | کاکنده (The Egg Grab Game)
+# 🥚 Farsi Kka Anda | (The Egg Grab Game)
 
 ## 🌟 Project Overview
 
-**Kka Anda** (Farsi: کاکنده, meaning 'Egg-planter') is a simple, browser-based arcade game where the player must use the 'Rooster Man' to catch falling eggs before they hit the ground. Inspired by a playful image of a winged person wearing a rooster hat and holding a box, the game aims for simple, fun, and addictive gameplay perfect for a GitHub Pages project.
+**Farsi Kka Anda**  is a simple, browser-based arcade game where the player must use the 'Rooster Man' to catch falling eggs before they hit the ground. Inspired by a playful image of a winged person wearing a rooster hat and holding a box, the game aims for simple, fun, and addictive gameplay perfect for a GitHub Pages project.
 
 ## 🕹️ How to Play
 
