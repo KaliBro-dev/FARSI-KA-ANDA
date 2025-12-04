@@ -1,38 +1,47 @@
-/* Basic Reset and Body Styles */
+/* Basic Reset and Body Styles (Clean Slate) */
 body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0;
+    /* Clean, light background */
+    background-color: #e0f2f1; 
     margin: 0;
-    padding: 20px;
-}
-
-header h1 {
-    color: #8B4513;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
 }
 
 /* The Main Game Area */
 #game-container {
     width: 600px;
-    height: 400px;
-    background-color: #ffe0b2; 
-    border: 5px solid #8B4513;
+    height: 450px; /* Adjusted height for the taller player image */
+    
+    /* Clean, light background for the game space */
+    background-color: #f7f7f7; 
+    border: 3px solid #333; /* Minimal border */
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* The Player/Box - A bit wider to make catching easier */
+/* The Player/Box (The Rooster Man Image) */
 #player-box {
     position: absolute;
-    bottom: 10px;
+    bottom: 0px; 
     left: 275px; 
-    width: 80px; /* Wider catcher */
-    height: 40px; 
-    background-color: #6d4c41; 
-    border-radius: 5px;
+    
+    width: 100px; 
+    height: 120px; 
+    
+    /* Image specific styles */
+    background-image: url('rooster_man_player.jpg'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: bottom; 
+    
+    background-color: transparent; 
+    border-radius: 0;
     z-index: 10;
 }
 
@@ -48,24 +57,47 @@ header h1 {
     box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Score Displays */
-#score, #missed {
-    position: absolute;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #8B4513;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 20;
-}
-
+/* Score and Missed Displays (Subtle, numeric only) */
 #score {
+    position: absolute;
     top: 5px;
     left: 5px;
+    font-size: 2em; /* Large score */
+    font-weight: bold;
+    color: #00897b; /* Teal color for score */
+    z-index: 20;
+    /* No background or padding to remove the 'box' look */
 }
 
 #missed {
-    top: 5px;
-    right: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em; 
+    color: #e53935; /* Red color for missed counter */
+    z-index: 20;
+}
+
+/* Hidden/Initial Instruction Overlay (Optional, but helpful for first run) */
+#info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
+    z-index: 30; /* Above all game elements */
+    opacity: 1;
+    transition: opacity 0.5s;
+    pointer-events: none; /* Allows clicks to go through */
+}
+#info-overlay.hidden {
+    opacity: 0;
 }
