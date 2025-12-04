@@ -19,7 +19,7 @@ This game is designed for easy deployment using GitHub Pages.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [[YOUR_REPO_URL]](https://github.com/KaliBro-dev/FARSI-KA-ANDA/tree/main)
+    git clone https://github.com/KaliBro-dev/FARSI-KA-ANDA/tree/main
     ```
 2.  **GitHub Pages Setup:**
     * Go to your repository **Settings** on GitHub.
