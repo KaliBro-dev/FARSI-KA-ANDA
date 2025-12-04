@@ -1,0 +1,71 @@
+/* Basic Reset and Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    color: #8B4513;
+}
+
+/* The Main Game Area */
+#game-container {
+    width: 600px;
+    height: 400px;
+    background-color: #ffe0b2; 
+    border: 5px solid #8B4513;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* The Player/Box - A bit wider to make catching easier */
+#player-box {
+    position: absolute;
+    bottom: 10px;
+    left: 275px; 
+    width: 80px; /* Wider catcher */
+    height: 40px; 
+    background-color: #6d4c41; 
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* The Falling Egg */
+.egg {
+    position: absolute;
+    top: -20px; 
+    width: 20px;
+    height: 25px;
+    background-color: white; 
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Score Displays */
+#score, #missed {
+    position: absolute;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #8B4513;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+#score {
+    top: 5px;
+    left: 5px;
+}
+
+#missed {
+    top: 5px;
+    right: 5px;
+}
