@@ -15,7 +15,7 @@ body {
 /* The Main Game Area */
 #game-container {
     width: 600px;
-    height: 450px; /* Adjusted height for the taller player image */
+    height: 480px; /* Increased height for the taller character */
     
     /* Clean, light background for the game space */
     background-color: #f7f7f7; 
@@ -29,12 +29,12 @@ body {
 #player-box {
     position: absolute;
     bottom: 0px; 
-    left: 275px; 
+    left: 230px; /* Initial center position */
     
-    width: 100px; /* Player width */
-    height: 120px; /* Player height */
+    width: 140px; /* Increased Width */
+    height: 160px; /* Increased Height */
     
-    /* Image specific styles - MAKE SURE YOUR FILE IS NAMED 'rooster_man_player.png' */
+    /* Image specific styles - Uses the PNG file */
     background-image: url('rooster_man_player.png'); 
     background-size: contain; 
     background-repeat: no-repeat;
@@ -102,5 +102,5 @@ body {
     z-index: 30; 
     opacity: 1;
     transition: opacity 0.5s;
-    pointer-events: none; /* Allows clicks to go through when hidden */
+    pointer-events: none;
 }
