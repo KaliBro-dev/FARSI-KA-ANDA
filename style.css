@@ -29,7 +29,7 @@ body {
 #player-box {
     position: absolute;
     bottom: 0px; 
-    left: 230px; /* Initial center position */
+    left: 230px; /* Initial center position for 140px width player (600-140)/2 = 230 */
     
     width: 140px; /* Increased Width */
     height: 160px; /* Increased Height */
