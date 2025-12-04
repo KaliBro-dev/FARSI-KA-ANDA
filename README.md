@@ -36,5 +36,5 @@ This game is designed for easy deployment using GitHub Pages.
 
 ## ✨ Credits
 
-* **Concept Inspiration:** The fantastic user-generated image of the 'Rooster Man' (Original file name: `Gemini_Generated_Image_bcirxibcirxibcir.jpg`).
-* **Developer:** [Your Name/GitHub Username]
+* **Concept Inspiration:** The fantastic user-generated image of the 'Rooster Man' 
+* **Developer:**kaliBro.dev
