@@ -37,4 +37,4 @@ This game is designed for easy deployment using GitHub Pages.
 ## ✨ Credits
 
 * **Concept Inspiration:** The fantastic user-generated image of the 'Rooster Man' 
-* **Developer:**kaliBro.dev
+* **Developer:** kaliBro.dev
