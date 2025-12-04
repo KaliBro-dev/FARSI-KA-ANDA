@@ -6,9 +6,10 @@ const missedDisplay = document.getElementById('missed');
 const playerSlider = document.getElementById('player-slider');
 
 const GAME_WIDTH = gameContainer.offsetWidth;
-const PLAYER_WIDTH = playerBox.offsetWidth;
-const PLAYER_HEIGHT = 120; // Must match CSS height
-const EGG_HEIGHT = 25; // Must match CSS height
+// Updated constants for larger player size:
+const PLAYER_WIDTH = 140; 
+const PLAYER_HEIGHT = 160; 
+const EGG_HEIGHT = 25; 
 
 let score = 0;
 let missedCount = 0;
@@ -151,9 +152,9 @@ function resetGame() {
     scoreDisplay.textContent = `0`;
     updateMissedDisplay();
     
-    // Reset slider and player position to center (275)
-    playerSlider.value = 275;
-    playerBox.style.left = '275px';
+    // Reset slider and player position to center (230 for new size)
+    playerSlider.value = 230;
+    playerBox.style.left = '230px';
 
     // Hide overlay
     const infoOverlay = document.getElementById('info-overlay');
@@ -166,8 +167,8 @@ function resetGame() {
 
 function startGame() {
     // Initial setup for slider and player position
-    playerSlider.value = 275;
-    playerBox.style.left = '275px'; 
+    playerSlider.value = 230;
+    playerBox.style.left = '230px'; 
 
     // Hide instructions overlay
     const infoOverlay = document.getElementById('info-overlay');
