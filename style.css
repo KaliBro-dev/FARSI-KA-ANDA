@@ -31,11 +31,11 @@ body {
     bottom: 0px; 
     left: 275px; 
     
-    width: 100px; 
-    height: 120px; 
+    width: 100px; /* Player width */
+    height: 120px; /* Player height */
     
-    /* Image specific styles */
-    background-image: url('rooster_man_player.jpg'); 
+    /* Image specific styles - MAKE SURE YOUR FILE IS NAMED 'rooster_man_player.png' */
+    background-image: url('rooster_man_player.png'); 
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: bottom; 
@@ -62,11 +62,10 @@ body {
     position: absolute;
     top: 5px;
     left: 5px;
-    font-size: 2em; /* Large score */
+    font-size: 2em; 
     font-weight: bold;
-    color: #00897b; /* Teal color for score */
+    color: #00897b; 
     z-index: 20;
-    /* No background or padding to remove the 'box' look */
 }
 
 #missed {
@@ -74,11 +73,18 @@ body {
     top: 10px;
     right: 10px;
     font-size: 1.5em; 
-    color: #e53935; /* Red color for missed counter */
+    color: #e53935; 
     z-index: 20;
 }
 
-/* Hidden/Initial Instruction Overlay (Optional, but helpful for first run) */
+/* Slider Styling */
+#player-slider {
+    margin-top: 20px;
+    width: 600px; /* Match game container width */
+    cursor: grab;
+}
+
+/* Instruction Overlay */
 #info-overlay {
     position: absolute;
     top: 0;
@@ -93,11 +99,8 @@ body {
     align-items: center;
     text-align: center;
     font-size: 1.5em;
-    z-index: 30; /* Above all game elements */
+    z-index: 30; 
     opacity: 1;
     transition: opacity 0.5s;
-    pointer-events: none; /* Allows clicks to go through */
-}
-#info-overlay.hidden {
-    opacity: 0;
+    pointer-events: none; /* Allows clicks to go through when hidden */
 }
